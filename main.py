@@ -31,11 +31,11 @@ if __name__ == "__main__":
     if r.status_code == 200:
         t = json.loads(req.text)
 
-      nlist=t['players']['list']
-      if len(nlist) != 0:
-          for x in nlist:
-              names = x['name_raw']
-              logger.info(f'{names}')
-      else:
-          names = '-Empty-'
-          logger.info(f'{names}')
+        nlist=t['players']['list']
+        if len(nlist) != 0:
+            for x in nlist:
+                names = x['name_raw']
+                logger.info(f'{names}')
+        else:
+            names = '-Empty-'
+            logger.info(f'{names}')
