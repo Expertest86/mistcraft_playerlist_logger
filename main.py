@@ -30,7 +30,7 @@ if __name__ == "__main__":
 
     req = requests.get('https://api.mcstatus.io/v2/status/java/mistcraft.dathand.com')
     if req.status_code == 200:
-        t = req.json
+        t = req.json()
         nlist = t["players"]["list"]
         
         if len(nlist) != 0:
