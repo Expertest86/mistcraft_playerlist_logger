@@ -30,8 +30,8 @@ if __name__ == "__main__":
     req = requests.get('https://api.mcstatus.io/v2/status/java/mistcraft.dathand.com')
     if r.status_code == 200:
         t = json.loads(req.text)
-
         nlist = t['players']['list']
+        
         if len(nlist) != 0:
             for x in nlist:
                 names = x['name_raw']
