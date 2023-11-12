@@ -26,7 +26,7 @@ except KeyError:
 
 
 if __name__ == "__main__":
-    logger.info(f"Token value: {SOME_SECRET}")
+    
 
     req = requests.get('https://api.mcstatus.io/v2/status/java/mistcraft.dathand.com')
     if req.status_code == 200:
