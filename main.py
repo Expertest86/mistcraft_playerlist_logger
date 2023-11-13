@@ -34,10 +34,10 @@ if __name__ == "__main__":
         nlist = t["players"]["list"]
         
         if len(nlist) != 0:
-            names = ""
+            names = []
             for x in nlist:
-                names = names.join("  ").join(x["name_raw"])        
-        else:
-            names = '-Empty-'
-        
-        logger.info(f'{names}')
+                names.append(x["name_raw"]) 
+            plist = "  ".join(names)
+            logger.info(f'{plist}') 
+        else:        
+            logger.info(f'-Empty-')
