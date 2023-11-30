@@ -45,6 +45,6 @@ if __name__ == "__main__":
 
             
         else:
-            logger.info(f'Server Closed')
-            return
+            logger.info(f'-- Server Closed --')
+            
         
