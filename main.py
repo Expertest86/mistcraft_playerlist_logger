@@ -31,16 +31,20 @@ if __name__ == "__main__":
     req = requests.get('https://api.mcstatus.io/v2/status/java/mistcraft.dathand.com')
     if req.status_code == 200:
         t = req.json()
-        if not 'players' in t: 
+        if 'players' in t:
+            nlist = t["players"]["list"]
+        
+            if len(nlist) != 0:
+                names = []
+                for x in nlist:
+                    names.append(x["name_raw"]) 
+                plist = "  ".join(names)
+                logger.info(f'{plist}') 
+            else:           
+                logger.info(f'-Empty-')
+
+            
+        else:
             logger.info(f'Server Closed')
             return
-        nlist = t["players"]["list"]
         
-        if len(nlist) != 0:
-            names = []
-            for x in nlist:
-                names.append(x["name_raw"]) 
-            plist = "  ".join(names)
-            logger.info(f'{plist}') 
-        else:        
-            logger.info(f'-Empty-')
